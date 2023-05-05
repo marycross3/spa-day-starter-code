@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 
+    @GetMapping
+    public String user(){
+        return "user/index";
+    }
+
     @GetMapping("/add")
     public String displayAddUserForm(){
         return "/user/add";
@@ -25,9 +30,10 @@ public class UserController {
         model.addAttribute("email", user.getEmail());
 
         if (!user.getPassword().equals(verify)){
+
             return "/user/add";
         } else {
-            return "/user/index";
+            return "redirect:";
         }
     }
 

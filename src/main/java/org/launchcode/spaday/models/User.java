@@ -4,19 +4,17 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private int nextID;
 
-    public User(int nextID) {
-        this.nextID = nextID;
-    }
 
-    public User(String username, String email, String password) {
+
+    public User(String username, String email, String password){
 
         this.username = username;
         this.email = email;
         this.password = password;
-        nextID++;
+
     }
+
 
 
     public String getUsername() {
